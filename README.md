@@ -1,7 +1,7 @@
 
 # Wagtail (Django) + Vue 3 + Quasar (TypeScript) - Headless Setup Guide
 
-A fullstack Wagtail CMS + Vue TS Quasar installation and configuration.
+An open source fullstack Wagtail CMS + Vue TS Quasar installation and configuration.
 
 ## 1. Backend Setup (Wagtail Django)
 #### Installation
