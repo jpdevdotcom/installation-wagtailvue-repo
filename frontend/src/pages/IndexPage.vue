@@ -10,14 +10,16 @@
       </q-item>
     </q-list>
 
-    <div class="q-mt-md">
+    <div v-if="isLoading" class="q-mt-md">
+      <q-spinner color="primary" size="2em" />
+      Loading content...
+    </div>
+
+    <div v-else class="q-mt-md">
       <q-item-section>
         {{ title }}
       </q-item-section>
-      <!-- Render your page content here -->
-
       <div class="q-mt-md">
-        <!-- Render HTML content safely -->
         <div v-html="sanitizedIntro"></div>
       </div>
     </div>
@@ -32,7 +34,7 @@ import DOMPurify from 'dompurify';
 
 const wagtailStore = useWagtailStore();
 const title = ref('');
-const { pages, homePage } = storeToRefs(wagtailStore);
+const { pages, homePage, isLoading } = storeToRefs(wagtailStore);
 
 // Helper to convert <embed> to <iframe>
 function convertEmbedToIframe(html: string): string {
